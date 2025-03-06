@@ -6,8 +6,36 @@
 // const message = "Welcome. Get ready to maser Vue.Js 3!"
 // const date = "<strong>30th June, 2023</strong>"
 
-const location = "Dhaka"
-const weather = ""
+// const location = "Dhaka"
+// const weather = "s"
+
+
+const bgOrange = "bg-orange-400"
+const bgIndigo = "bg-indigo-400"
+const bgGreen = "bg-green-400"
+
+const weekday  = true
+
+const colors = {
+    bgColor:'bg-teal-100',
+    borderColor: 'border-teal-500',
+    textColor:'text-teal-900 '
+
+}
+
+const messageType = 'warning'
+if('error' ==  messageType){
+    colors.bgColor = 'bg-red-100'
+    colors.borderColor = 'border-red-500'
+    colors.textColor = 'bg-red-900'
+}
+
+else if('warning'=== messageType){
+    colors.bgColor = 'bg-yellow-100'
+    colors.borderColor = 'border-yellow-500'
+    colors.textColor = 'bg-yellow-900'
+}
+
 
 
 
@@ -39,21 +67,59 @@ const weather = ""
 </template> -->
 
 
-<template>
+<!-- <template>
     <section class="container mx-auto flex items-center flex-col">
         <h1 class="text-center text-2xl py-10" >Login in Vue.js</h1>
         <div class="w-1/3  p-10 flex items-center flex-col space-y-10 bg-blue-800">
             <h1  class="text-3xl " >{{ location }}</h1>
-            <h2 class="text-2xl" v-if="weather==='s'">Weather: Sunny</h2>
-            <h2 class="text-2xl" v-else-if="weather==='c'">Weather: Cold</h2>
-            <h2 class="text-2xl" v-else-if="weather==='r'">Weather: Rainy</h2>
-            <h2 class="text-2xl" v-else>Weather: Cyclone</h2>
-            <img v-if="weather==='s'" src="https://cdn.creazilla.com/cliparts/38457/sun-hot-clipart-md.png" alt="">
-            <img v-else-if="weather==='c'" src="https://cdn.creazilla.com/icons/3432746/snowy-icon-md.png" alt="">
-            <img v-else-if="weather==='r'" src="https://cdn.creazilla.com/cliparts/63069/weather-icon-clipart-md.png" alt="">
-            <img v-else src="https://cdn.creazilla.com/cliparts/1723266/tornado-clipart-md.png" alt="">
+            
+            <div v-show="weather==='s'">
+                <h2 class="text-2xl" >Weather: Sunny</h2>
+            <img  src="https://cdn.creazilla.com/cliparts/38457/sun-hot-clipart-md.png" alt="">
+            </div>
+
+           <div v-show="weather==='pc'">
+            <h2 class="text-2xl" >Weather: Cold</h2>
+            <img  src="https://cdn.creazilla.com/icons/3432746/snowy-icon-md.png" alt="">
+
+           </div>
+           
+           <div v-show="weather==='r'">
+            <h2 class="text-2xl" >Weather: Rainy</h2>
+            <img  src="https://cdn.creazilla.com/cliparts/63069/weather-icon-clipart-md.png" alt="">
+
+           </div>
+            <div  v-show="weather==='c'">
+                <h2 class="text-2xl">Weather: Cyclone</h2>
+            <img src="https://cdn.creazilla.com/cliparts/1723266/tornado-clipart-md.png" alt="">
+            </div>
 
         </div>
+
+    </section>
+</template> -->
+
+<template>
+    <section  class="container mx-auto">
+        <h1 class="text-center text-3xl py-12" >Class & Style Binding</h1>
+        <section class="flex space-x-10" >
+            <div class="w-1/3  h-16" :class="bgIndigo"></div>
+            <div class="w-1/3  h-16" :class="bgGreen" ></div>
+            <div class="w-1/3  h-16" :class="bgOrange" ></div>
+
+        </section>
+
+        <section class="mt-10">
+            <div class=" h-16 flex items-center justify-center text-white" :class="weekday ? 'bg-red-600 text-2xl': 'bg-green-600 text-4xl'">It's a weekday</div>
+        </section>
+
+        <section class="mt-10">
+            <div class="border-t-4  rounded-b  px-4 py-3 shadow-md" :class="[colors.bgColor, colors.borderColor, colors.textColor]" role="alert">
+                <p class="font-bold" >Our Privacy has changes</p>
+                <p class="text-sm" >Make sure you know how these changes affect you.</p>
+
+            </div>
+        </section>
 
     </section>
 </template>
