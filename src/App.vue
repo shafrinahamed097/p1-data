@@ -10,30 +10,53 @@
 // const weather = "s"
 
 
-const bgOrange = "bg-orange-400"
-const bgIndigo = "bg-indigo-400"
-const bgGreen = "bg-green-400"
+// const bgOrange = "bg-orange-400"
+// const bgIndigo = "bg-indigo-400"
+// const bgGreen = "bg-green-400"
 
-const weekday  = true
+// const weekday  = true
+
+// const colors = {
+//     bgColor:'bg-teal-100',
+//     borderColor: 'border-teal-500',
+//     textColor:'text-teal-900 '
+
+// }
+
+// const messageType = 'warning'
+// if('error' ==  messageType){
+//     colors.bgColor = 'bg-red-100'
+//     colors.borderColor = 'border-red-500'
+//     colors.textColor = 'bg-red-900'
+// }
+
+// else if('warning'=== messageType){
+//     colors.bgColor = 'bg-yellow-100'
+//     colors.borderColor = 'border-yellow-500'
+//     colors.textColor = 'bg-yellow-900'
+// }
+
+
+const bgOrange = 'background-color: rgba(251,146,60,1)'
+const bgIndigo = 'background-color:rgba(129,140,248,1)'
+const bgGreen = 'background-color:rgba(52,11,153,1)'
+
+const bgRed = 'background-color:rgba(220,38,38,1)'
+const bgDarkGreen = 'background-color:rgba(5,150,105,1)'
 
 const colors = {
-    bgColor:'bg-teal-100',
-    borderColor: 'border-teal-500',
-    textColor:'text-teal-900 '
-
+    borderColor: 'rgba(20,184,166,1)',
+    color:'rgba(19,78,74,1)',
+    backgroundColor : 'rgba(204,251,241,1)'
+    
 }
 
-const messageType = 'warning'
-if('error' ==  messageType){
-    colors.bgColor = 'bg-red-100'
-    colors.borderColor = 'border-red-500'
-    colors.textColor = 'bg-red-900'
-}
+const weekday = false
 
-else if('warning'=== messageType){
-    colors.bgColor = 'bg-yellow-100'
-    colors.borderColor = 'border-yellow-500'
-    colors.textColor = 'bg-yellow-900'
+const messageType = 'success'
+if('error' == messageType){
+    colors.backgroundColor = 'rgba(254,226,226,1)'
+    colors.color = 'rgba(127,29,29,1)'
 }
 
 
@@ -99,7 +122,7 @@ else if('warning'=== messageType){
     </section>
 </template> -->
 
-<template>
+<!-- <template>
     <section  class="container mx-auto">
         <h1 class="text-center text-3xl py-12" >Class & Style Binding</h1>
         <section class="flex space-x-10" >
@@ -121,6 +144,31 @@ else if('warning'=== messageType){
             </div>
         </section>
 
+    </section>
+</template> -->
+
+<template>
+    <section class="container mx-auto">
+        <h1 class="text-center tex-3xl py-12" >Class & Style Binding</h1>
+
+        <section class="flex space-x-10">
+            <div class="w-80 b h-24" :style="bgOrange"></div>
+            <div class="w-80 b h-24" :style="bgIndigo"></div>
+            <div class="w-80 h-24" :style="bgDarkGreen"></div>
+        </section>
+
+        <section class="mt-10">
+            <div class=" h-16 flex items-center justify-center text-white" :style="weekday==true ?[bgRed, 'font-size:20px']:[bgDarkGreen, 'font-size:35px']">It's a weekday</div>
+        </section>
+
+        <section class="mt-10">
+            <div class=" border-t-4  rounded-b  px-4 py-3 shadow-md" :style="colors">
+                <p class="font-bold" >Our Privacy policy has changed</p>
+                <p class="text-sm" >Make sure you know how these changes affect you</p>
+
+            </div>
+
+        </section>
     </section>
 </template>
 <style scoped>
