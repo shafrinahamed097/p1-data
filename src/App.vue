@@ -1,6 +1,6 @@
 <script setup>
 
-images = [
+const contents = [
     {
         src: "https://images.generated.photos/zRuly38LuHo-upVQfxZjUb6YXOHXapy58gXXFglv1Rg/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDAzMzE4LmpwZw.jpg",
         alt: "Jane Doe",
@@ -39,30 +39,30 @@ images = [
         <h1 style="text-align:center;margin:40px 0px;font-size:40px">Data Example</h1>
         <section class="content">
             <section class="person"><img
-                    src="https://images.generated.photos/zRuly38LuHo-upVQfxZjUb6YXOHXapy58gXXFglv1Rg/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDAzMzE4LmpwZw.jpg"
-                    alt="Jane Doe">
+                    :src="contents[0].src"
+                    :alt="contents[0].alt">
                 <div>
-                    <h1>Jane Doe</h1>
-                    <h2>CEO, Doe Corporation</h2>
-                    <p>968 Ocala Street, Orlando, Florida</p>
+                    <h1>{{ contents[0].name }}</h1>
+                    <h2>{{ contents[0].position }}</h2>
+                    <p>{{ contents[0].address }}</p>
                 </div>
             </section>
             <section class="person"><img
-                    src="https://images.generated.photos/dVrq4AXS8SmlQ_HTyxG4bJRmi4IulUA4omUbvvSyQMU/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDkwODEzLmpwZw.jpg"
-                    alt="John Doe">
+                    :src="contents[1].src"
+                   :alt="contents[1].alt">
                 <div>
-                    <h1>John Doe</h1>
-                    <h2>CTO, Doe Corporation</h2>
-                    <p>2970 Duke Lane, Brunswick, New Jersey</p>
+                    <h1>{{ contents[1].name }}</h1>
+                    <h2>{{ contents[1].position }}</h2>
+                    <p>{{ contents[1].address }}</p>
                 </div>
             </section>
             <section class="person"><img
-                    src="https://images.generated.photos/XkTVulI9UnbMVl1veOfrra6bS2v0QIqLbSIQrgXni14/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTYxODM1LmpwZw.jpg"
-                    alt="Jimmy Doe">
+                    :src="contents[2].src"
+                    :alt="contents[2].alt">
                 <div>
-                    <h1>Jimmy Doe</h1>
-                    <h2>CMO, Doe Corporation</h2>
-                    <p>3679 Elk Street, Denver, Colorado</p>
+                    <h1>{{ contents[2].name }}</h1>
+                    <h2>{{contents[2].position  }}</h2>
+                    <p>{{contents[2].address  }}</p>
                 </div>
             </section>
         </section>
@@ -542,4 +542,3 @@ images = [
             }
         }
     </style>
-
