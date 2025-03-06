@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 // const number = 31;
 // const animal = "goat";
 // const searchUrl = "https://www.pexels.com/search/"
@@ -62,7 +62,9 @@ if('error' == messageType){
 
 
 
-</script>
+</script> -->
+
+
 
 <!-- <template>
     <div>
@@ -147,7 +149,7 @@ if('error' == messageType){
     </section>
 </template> -->
 
-<template>
+<!-- <template>
     <section class="container mx-auto">
         <h1 class="text-center tex-3xl py-12" >Class & Style Binding</h1>
 
@@ -170,6 +172,25 @@ if('error' == messageType){
 
         </section>
     </section>
+</template> -->
+
+
+<script setup>
+
+const items = [1,2,3,4,5] // List Rendering
+
+</script>
+
+<template>
+    <section>
+        <div class="grid grid-flow-col grid-rows-5 gap-4 ">
+            <div class="border-2 border-solid w-32 " v-for="item in items">{{ item }}</div>
+            <div class="border-2 border-solid w-32 " v-for="n in 10">{{ n }}</div>
+           
+  
+</div>
+    </section>
+
 </template>
 <style scoped>
 
