@@ -175,13 +175,13 @@ if('error' == messageType){
 </template> -->
 
 
-<script setup>
+<!-- <script setup>
 
 const items = [1,2,3,4,5] // List Rendering
 
-</script>
+</script> -->
 
-<template>
+<!-- <template>
     <section>
         <div class="grid grid-flow-col grid-rows-5 gap-4 ">
             <div class="border-2 border-solid w-32 " v-for="item in items">{{ item }}</div>
@@ -191,7 +191,28 @@ const items = [1,2,3,4,5] // List Rendering
 </div>
     </section>
 
+</template> -->
+<script setup>
+  const tasks = [
+    "Complete project proposal",
+    "Update website content",
+    "Fix bug in user authentication",
+    "Prepare presentation sliders",
+    "Test new features implementation"
+  ]
+</script>
+
+<template>
+    <section>
+        <section>
+            <div class="border border-indigo-600 h-8">
+                <a href="" class="text-white m-8 " v-for="(task, index ) in tasks"> {{ index+1 }}. {{ task }}</a>
+            </div>
+        </section>
+    </section>
 </template>
+
+
 <style scoped>
 
 </style>
