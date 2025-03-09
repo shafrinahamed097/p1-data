@@ -199,16 +199,59 @@ const items = [1,2,3,4,5] // List Rendering
     "Fix bug in user authentication",
     "Prepare presentation sliders",
     "Test new features implementation"
-  ]
+  ];
+
+
+  const tasks1 = [
+    {id:1, title: "Complete project proposal", status: "In Progress"},
+    {id:2, title: "Update website content", status: "Completed"},
+    {id:3, title: "Fix bug in user authentication", status: "Pending"},
+    {id:4, title: "Test new features implementation", status: "In Progress"},
+    {id:5, title: "Prepare presentation sliders", status: "Completed"}
+  ];
+
+  function getCompletedTasks(){
+    return tasks1.filter(task=>"Completed" == task.status)
+  }
+
+  function getProgressTasks(){
+    return tasks1.filter(task=>"In Progress" == task.status)
+  }
+
+  function getPendingTask(){
+    return tasks1.filter(task=>"Pending" == task.status)
+  }
 </script>
 
 <template>
-    <section>
-        <section>
-            <div class="border border-indigo-600 h-8">
-                <a href="" class="text-white m-8 " v-for="(task, index ) in tasks"> {{ index+1 }}. {{ task }}</a>
+    
+        <section class="grid grid-flow-col grid-rows-5  ">
+            <!-- <div class="border border-indigo-600  m-8" v-for="(task, index) in tasks">
+              {{ index+1 }} .  {{ task }}
+                
+            </div> -->
+
+            <!-- <div class="border border-indigo-600  m-8" v-for="task in tasks1"  :key="tasks1.id">
+             {{ task.id }}.  {{ task.title }}
+                
             </div>
-        </section>
+         -->
+          
+         <div class="border border-indigo-600  m-8" v-for="task in getCompletedTasks()"  :key="tasks1.id">
+          <h2 class="text-green-900 underline " >Completed Task </h2>  {{ task.id }}.  {{ task.title }}
+                
+            </div>
+
+            <div class="border border-indigo-600  m-8" v-for="task in getPendingTask()"  :key="tasks1.id">
+            <h2 class="text-yellow-900 underline">Pending Task </h2> {{ task.id }}.  {{ task.title }}
+                
+            </div>
+
+            <div class="border border-indigo-600  m-8" v-for="task in getProgressTasks()"  :key="tasks1.id">
+            <h2 class="text-red-900 underline">In Progress Task </h2> {{ task.id }}.  {{ task.title }}
+                
+            </div>
+        
     </section>
 </template>
 
