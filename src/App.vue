@@ -241,7 +241,13 @@ const items = [1,2,3,4,5] // List Rendering
         details: "A card component has a figure, a body part, and inside body there are title3 and actions parts",
         photo: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp'
     }
-  ]
+  ];
+  import {ref} from 'vue'
+  const location = ref ("Noakhali");
+
+  function changeLocation(newLocation){
+    location.value = newLocation;
+  }
 
 
 </script>
@@ -281,7 +287,7 @@ const items = [1,2,3,4,5] // List Rendering
 </template> -->
 
 
-<template>
+<!-- <template>
 
 <article class="text-wrap">
   <h3>Beloved Manhattan soup stand closes</h3>
@@ -314,8 +320,25 @@ const items = [1,2,3,4,5] // List Rendering
         
     </section>
 
-</template>
+</template> -->
 
+
+<template>
+    <section>
+
+        <h2 class="text-2xl mb-8">Events & Reactivity in Vue.js</h2>
+        
+
+        <div class="flex gap-4 w-80">
+            <button class="btn  w-32 btn-primary" @click="changeLocation('Noakhali')">Noakhali</button>
+            <button class="btn  w-32 btn-primary" @click = "changeLocation('Dhaka')">Dhaka</button>
+            <button class="btn  w-32 btn-primary" @click = "changeLocation('Coxsbazar')">Coxsbazar</button>
+
+        </div>
+
+        <h2 class="text-2xl mt-8">Current Location is {{ location }}</h2>
+    </section>
+</template>
 <style scoped>
 
 </style>
