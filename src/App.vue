@@ -210,35 +210,63 @@ const items = [1,2,3,4,5] // List Rendering
     {id:5, title: "Prepare presentation sliders", status: "Completed"}
   ];
 
-  function getCompletedTasks(){
-    return tasks1.filter(task=>"Completed" == task.status)
+  function getCompletedTask(){
+    return tasks1.filter(task=>"Completed"==task.status)
   }
 
-  function getProgressTasks(){
-    return tasks1.filter(task=>"In Progress" == task.status)
+  function getProgressTask(){
+    return tasks1.filter(task=>"In Progress" == task.status )
   }
 
   function getPendingTask(){
     return tasks1.filter(task=>"Pending" == task.status)
   }
-</script>
 
+  const productDetails = [
+    {
+        id:1,
+        title: "Card Title1",
+        details: "A card component has a figure, a body part, and inside body there are title1 and actions parts",
+        photo: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    },
+    {
+        id:2,
+        title: "Card Title2",
+        details: "A card component has a figure, a body part, and inside body there are title2 and actions parts",
+        photo: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    },
+    {
+        id:3,
+        title:"Card Title3",
+        details: "A card component has a figure, a body part, and inside body there are title3 and actions parts",
+        photo: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp'
+    }
+  ]
+
+
+</script>
+<!-- 
 <template>
     
         <section class="grid grid-flow-col grid-rows-5  ">
-            <!-- <div class="border border-indigo-600  m-8" v-for="(task, index) in tasks">
+            <div class="border border-indigo-600  m-8" v-for="(task, index) in tasks">
               {{ index+1 }} .  {{ task }}
                 
-            </div> -->
+            </div> 
 
-            <!-- <div class="border border-indigo-600  m-8" v-for="task in tasks1"  :key="tasks1.id">
+         <div class="border border-indigo-600  m-8" v-for="task in tasks1"  :key="tasks1.id">
              {{ task.id }}.  {{ task.title }}
                 
             </div>
-         -->
+         
           
-         <div class="border border-indigo-600  m-8" v-for="task in getCompletedTasks()"  :key="tasks1.id">
-          <h2 class="text-green-900 underline " >Completed Task </h2>  {{ task.id }}.  {{ task.title }}
+         <div class="border border-indigo-600  m-8" v-for="task in getCompletedTask()"  :key="tasks1.id">
+            <h2 class="text-green-900 underline">Completed Task </h2> {{ task.id }}.  {{ task.title }}
+                
+            </div>
+
+            <div class="border border-indigo-600  m-8" v-for="task in getProgressTask()"  :key="tasks1.id">
+            <h2 class="text-yellow-900 underline">In Progress Task </h2> {{ task.id }}.  {{ task.title }}
                 
             </div>
 
@@ -247,14 +275,46 @@ const items = [1,2,3,4,5] // List Rendering
                 
             </div>
 
-            <div class="border border-indigo-600  m-8" v-for="task in getProgressTasks()"  :key="tasks1.id">
-            <h2 class="text-red-900 underline">In Progress Task </h2> {{ task.id }}.  {{ task.title }}
-                
-            </div>
+          
         
     </section>
-</template>
+</template> -->
 
+
+<template>
+
+<article class="text-wrap">
+  <h3>Beloved Manhattan soup stand closes</h3>
+  <p>ew Yorkers are facing the winter chill...</p>
+</article>
+
+    <section>
+        <div class="flex flex-nowrap gap-4">
+          
+            <div class="card bg-base-100 w-96 shadow-sm bg-black" v-for="productDetail in productDetails" :key="productDetail.id" >
+  <figure>
+    <img :class="2==productDetail.id?'h-64': ''"
+      :src="productDetail.photo"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{{productDetail.title}}</h2>
+    <p>{{ productDetail.details }}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+
+       
+
+        
+    </section>
+
+</template>
 
 <style scoped>
 
