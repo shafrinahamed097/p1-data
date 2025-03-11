@@ -242,12 +242,27 @@ const items = [1,2,3,4,5] // List Rendering
         photo: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp'
     }
   ];
-  import {ref} from 'vue'
+  import {ref, reactive} from 'vue'
   const location = ref ("Noakhali");
 
   function changeLocation(newLocation){
     location.value = newLocation;
   }
+
+
+ 
+  const address = reactive({
+  name: "Noakhali",
+  weather: "Sunny"
+});
+
+function changeAddress(newAddress) {
+  address.name = newAddress;
+}
+    
+ 
+
+  
 
 
 </script>
@@ -323,7 +338,7 @@ const items = [1,2,3,4,5] // List Rendering
 </template> -->
 
 
-<template>
+<!-- <template>
     <section>
 
         <h2 class="text-2xl mb-8">Events & Reactivity in Vue.js</h2>
@@ -338,7 +353,25 @@ const items = [1,2,3,4,5] // List Rendering
 
         <h2 class="text-2xl mt-8">Current Location is {{ location }}</h2>
     </section>
+</template> -->
+
+<template>
+    <section>
+
+        <h2 class="text-2xl mb-8">Events & Reactivity in Vue.js</h2>
+        
+
+        <div class="flex gap-4 w-80">
+            <button class="btn  w-32 btn-primary" @click="changeAddress('Noakhali')">Noakhali</button>
+            <button class="btn  w-32 btn-primary" @click ="changeAddress('Dhaka')">Dhaka</button>
+            <button class="btn  w-32 btn-primary" @click ="changeAddress('Coxsbazar')">Coxsbazar</button>
+
+        </div>
+
+        <h2 class="text-2xl mt-8">Current Location is {{ address.name }}</h2>
+    </section>
 </template>
+
 <style scoped>
 
 </style>
