@@ -262,7 +262,32 @@ function changeAddress(newAddress) {
     
  
 
-  
+//  const accordionIndex = ref(0);
+
+const fullImage  =ref('https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480553664_122113642310717043_4403064126657878184_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmJigCcJdYMhIjKI7w-ge2fbmre3aq1Rh9uat7dqrVGEE2uAY6BewAUYOzjdWM5_dkuJHVXORTeCJz1lyjMTN_&_nc_ohc=_-qtqtPH7bIQ7kNvgHLsqFI&_nc_oc=AdhCuKnzrI1eDzmY9r95XwoOYKZKo9lF6L6ac-_7sqMRSYdVKr-rHWCYYlKo6ly1g5U&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=AOvM0lt7-X51-ytdMVvkT-N&oh=00_AYFJAriFqXxvH-KOfbFke0BZhybMhoUY1joHIVUk51Fysw&oe=67D71AA9')
+const images = [
+    {
+        thumb: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480553664_122113642310717043_4403064126657878184_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmJigCcJdYMhIjKI7w-ge2fbmre3aq1Rh9uat7dqrVGEE2uAY6BewAUYOzjdWM5_dkuJHVXORTeCJz1lyjMTN_&_nc_ohc=_-qtqtPH7bIQ7kNvgHLsqFI&_nc_oc=AdhCuKnzrI1eDzmY9r95XwoOYKZKo9lF6L6ac-_7sqMRSYdVKr-rHWCYYlKo6ly1g5U&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=AOvM0lt7-X51-ytdMVvkT-N&oh=00_AYFJAriFqXxvH-KOfbFke0BZhybMhoUY1joHIVUk51Fysw&oe=67D71AA9",
+        full: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480553664_122113642310717043_4403064126657878184_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmJigCcJdYMhIjKI7w-ge2fbmre3aq1Rh9uat7dqrVGEE2uAY6BewAUYOzjdWM5_dkuJHVXORTeCJz1lyjMTN_&_nc_ohc=_-qtqtPH7bIQ7kNvgHLsqFI&_nc_oc=AdhCuKnzrI1eDzmY9r95XwoOYKZKo9lF6L6ac-_7sqMRSYdVKr-rHWCYYlKo6ly1g5U&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=AOvM0lt7-X51-ytdMVvkT-N&oh=00_AYFJAriFqXxvH-KOfbFke0BZhybMhoUY1joHIVUk51Fysw&oe=67D71AA9"
+    },
+    {
+        thumb: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480371232_122113642328717043_5886777312071690265_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGkKCy0JDcQOEZgdTO-QesBjKlU6s5CDGSMqVTqzkIMZOvIfYMiqN7arCkm77bCcGC43DfcT4M_eXQT1Dn-WrJb&_nc_ohc=OWgkYv6HNxMQ7kNvgHLtptQ&_nc_oc=Adi1yjpaN7IWBkbd47Rnto8h-uFijdN0MGvhrDe0K0dUheP5xb4RSR7A1GM57_TjSZc&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=AbHlTWgx6nQqvIjwJEx6Qul&oh=00_AYHE9eBFsZG0PouJzlqFfjPGFE532aYF13qyXR1ATI7Tmw&oe=67D733FF",
+        full: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480371232_122113642328717043_5886777312071690265_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGkKCy0JDcQOEZgdTO-QesBjKlU6s5CDGSMqVTqzkIMZOvIfYMiqN7arCkm77bCcGC43DfcT4M_eXQT1Dn-WrJb&_nc_ohc=OWgkYv6HNxMQ7kNvgHLtptQ&_nc_oc=Adi1yjpaN7IWBkbd47Rnto8h-uFijdN0MGvhrDe0K0dUheP5xb4RSR7A1GM57_TjSZc&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=AbHlTWgx6nQqvIjwJEx6Qul&oh=00_AYHE9eBFsZG0PouJzlqFfjPGFE532aYF13qyXR1ATI7Tmw&oe=67D733FF"
+    },
+    {
+        thumb: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480247750_122113642316717043_1282146288936228453_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFs7VJuqenkbM8_Azu1jWPc_87_rDUye-H_zv-sNTJ74SHPiChq1rpICWbgpU2BiE-fvVoLfLmcZBXcUdAuXgvk&_nc_ohc=JtSjkr5p14cQ7kNvgFiLlBn&_nc_oc=Adi6eZolCxHx0MNj6BRjr1T3SMyLCZgMyK_ssxJuV9iXbr6jRgMtVBy5vLVoOg-jWLA&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=A02ZQLi9rN0kXO_W7Gx7m9k&oh=00_AYGJaA72JRUARNg0FrfcVnNWTKP1jhcXIXAmgRaDpX3hWg&oe=67D72716",
+        full: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/480247750_122113642316717043_1282146288936228453_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFs7VJuqenkbM8_Azu1jWPc_87_rDUye-H_zv-sNTJ74SHPiChq1rpICWbgpU2BiE-fvVoLfLmcZBXcUdAuXgvk&_nc_ohc=JtSjkr5p14cQ7kNvgFiLlBn&_nc_oc=Adi6eZolCxHx0MNj6BRjr1T3SMyLCZgMyK_ssxJuV9iXbr6jRgMtVBy5vLVoOg-jWLA&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=A02ZQLi9rN0kXO_W7Gx7m9k&oh=00_AYGJaA72JRUARNg0FrfcVnNWTKP1jhcXIXAmgRaDpX3hWg&oe=67D72716"
+    },
+    
+
+    
+];
+
+function setImage(image){
+    fullImage.value = image.full
+}
+
+
 
 
 </script>
@@ -355,7 +380,7 @@ function changeAddress(newAddress) {
     </section>
 </template> -->
 
-<template>
+<!-- <template>
     <section>
 
         <h2 class="text-2xl mb-8">Events & Reactivity in Vue.js</h2>
@@ -369,6 +394,25 @@ function changeAddress(newAddress) {
         </div>
 
         <h2 class="text-2xl mt-8">Current Location is {{ address.name }}</h2>
+    </section>
+
+    
+</template> -->
+
+<template>
+    <section class="container mx-auto flex items-center flex-col w-96">
+        <h1 class="text-center text-2xl py-10 mb-10 " >Events & Reactivity</h1>
+        <div class="grid grid-cols-4 gap-4">
+            <div class="flex space-x-2">
+                <img @click="setImage(image)" class="cursor-pointer" v-for="image in images" :src="image.thumb" :key="image.thumb" alt="">
+                
+            </div>
+            
+        </div>
+        <div class="mt-10">
+                <img class="cursor-pointer w-full " :src="fullImage" :key="fullImage"  >
+            </div>
+
     </section>
 </template>
 
