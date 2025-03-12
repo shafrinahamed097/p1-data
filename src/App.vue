@@ -288,6 +288,38 @@ function setImage(image){
 }
 
 
+const about = ref("Hello");
+
+const links = [
+    {
+        name: "Google",
+        url:"https://www.google.com",
+        about:"Google is an american multinational technology company that specializes in Internet-related services"
+        
+    },
+    {
+        name: "Microsoft",
+        url:"microsoft.com",
+        about:"Microsoft is an american multinational technology company that specializes in Internet-related services"
+
+    },
+    {
+        name: "Facebook",
+        url: "facebook.com",
+        about: "Facebook is an american multinational technology company that specializes in Internet-related services"
+    },
+    {
+        name: "Twitter",
+        url:"twitter.com",
+        about:"Twitter is an american multinational technology company that specializes in Internet-related services"
+    }
+];
+
+function setText(text){
+    about.value=text
+}
+
+
 
 
 </script>
@@ -399,7 +431,7 @@ function setImage(image){
     
 </template> -->
 
-<template>
+<!-- <template>
     <section class="container mx-auto flex items-center flex-col w-96">
         <h1 class="text-center text-2xl py-10 mb-10 " >Events & Reactivity</h1>
         <div class="grid grid-cols-4 gap-4">
@@ -414,8 +446,28 @@ function setImage(image){
             </div>
 
     </section>
-</template>
+</template> -->
 
+
+<template>
+<section class="container mx-auto flex items-center flex-col">
+    <h1 class="text-center text-2xl py-10" >Events & Reactivity in Vue.Js</h1>
+    <h2 class="mt-10">{{ about }}</h2>
+    <div class="container mx-auto flex space-x-5 justify-center m-[1000px]">
+        <a 
+        v-for="link in links"
+        :key="link.name"
+        href="#"
+        @click.prevent = "setText((link.about))"
+       
+        >{{ link.name }}
+
+        </a>
+
+    </div>
+
+</section>
+</template>
 <style scoped>
 
 </style>
