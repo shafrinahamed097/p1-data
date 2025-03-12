@@ -321,6 +321,38 @@ function setText(text){
 
 
 
+const message = ref("Hello World Vue 3");
+
+const space = ref(0)
+
+function spacePressed(event){
+    space.value++;
+    message.value = "Space pressed " + space.value + " times "
+}
+
+function pressWhat(event){
+    message.value = "You pressed " + event.key
+    
+}
+
+function buttonPressed(){
+    message.value = "You clicked the button"
+
+}
+
+function ctrlRightClick(){
+    message.value = "Ctrl+Right Click"
+}
+
+function divClick(){
+    alert("Div Clicked")
+}
+
+function buttonClick(){
+    alert("Button Clicked")
+}
+
+
 
 </script>
 <!-- 
@@ -449,7 +481,7 @@ function setText(text){
 </template> -->
 
 
-<template>
+<!-- <template>
 <section class="container mx-auto flex items-center flex-col">
     <h1 class="text-center text-2xl py-10" >Events & Reactivity in Vue.Js</h1>
     <h2 class="mt-10">{{ about }}</h2>
@@ -467,6 +499,35 @@ function setText(text){
     </div>
 
 </section>
+</template> -->
+
+
+<template>
+    <section class="container mx-auto flex items-center flex-col">
+        <h1 class="text-center text-2xl py-10" >Events & Reactivity in Vue.js</h1>
+        <h2 class="mt-10" >{{ message }}</h2>
+        <form action="https://google.com/search">
+            <div class="container mx-auto flex space-x-5 justify-center m-5">
+                <input @keyup.space = "spacePressed() " type="text" name="text" id="" class="border border-gray-500 bg-white p-5 text-blue-600">
+            </div>
+            <div class="container mx-auto flex space-x-5 justify-center m-5">
+                <input @keyup="pressWhat($event)" type="text" name="text" id="" class="border border-gray-500 bg-white p-5 text-blue-600">
+            </div>
+            <button  @click.prevent="buttonPressed()" class="container mx-auto flex space-x-5 justify-center m-5">
+            Button
+        </button>
+        <button @click.ctrl.right.prevent="ctrlRightClick()" class="container mx-auto flex space-x-5 justify-center m-5">
+            Ctrl + Right Click
+        </button>
+        </form>
+
+        <div @click="divClick()" class="bg-gray-200 w-[500px] h-80 mt-5 flex items-center justify-center"  >
+            <button @click.stop="buttonClick()" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded" >Button</button>
+        </div>
+
+        
+
+    </section>
 </template>
 <style scoped>
 
